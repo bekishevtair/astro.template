@@ -1,0 +1,44 @@
+---
+import { t } from 'i18next';
+import Column from './Column.astro'
+import Image from './Image.astro'
+const styles = {
+  p: 'txt ts-14'
+}
+const cc = Object.values(t('footer.text', {returnObjects: true})) 
+
+---
+<footer class="footer">
+  <div class="container">
+    <div class="row mb-3">
+      <Column colsLg='3'>
+        <Image imgSrc={t('footer.logo')}/>
+      </Column>
+    </div>
+    <div class="row">
+      {cc.map((item) => {
+          return  <Column colsLg='6'>
+                    <p class={styles.p}>
+                      {item.text}
+                    </p>
+                  </Column>
+        })}
+    </div>
+  </div>
+</footer>
+
+<!-- STYLES -->
+<style lang="scss">
+  @import '../styles/settings/vars';
+  @media (min-width: $s-xs) {
+    .footer {
+      padding: 30px 0;
+      background: map-get($bc, 'light' );
+    }
+  }
+  @media (min-width: $s-sm) {}
+  @media (min-width: $s-md) {}
+  @media (min-width: $s-lg) {}
+  @media (min-width: $s-xl) {}
+  @media (min-width: $s-xxl) {}
+</style>

@@ -1,0 +1,6 @@
+---
+const {imgSrc = '../../img/ui/default.png', name = 'default'} = Astro.props
+---
+<div class=`img img-${name}`>
+  <img src={imgSrc} alt={`Image - ${name}`}>
+</div>

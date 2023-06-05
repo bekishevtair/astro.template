@@ -1,0 +1,13 @@
+---
+const { 
+  colsLg = '6', 
+  flex = 'column', 
+  justify = 'center', 
+  align = 'start' 
+} = Astro.props
+---
+<div class={`col-12 col-lg-${colsLg}`}>
+  <div class={`wrapper d-flex flex-${flex} justify-content-${justify} align-items-${align} mb-4`}>
+    <slot />
+  </div>
+</div>

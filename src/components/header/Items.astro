@@ -1,0 +1,11 @@
+---
+import { localizePath, localizeUrl  } from "astro-i18next";
+const { items } = Astro.props
+---
+<div class="header__exp-body">
+  {items.map(item => 
+    <a class="header__exp-link" href={localizePath(item.link)}>
+      {item.title}
+    </a> 
+  )}
+</div>

@@ -1,0 +1,32 @@
+@media (min-width: $s-xs) {
+  // body {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   height: 100vh;
+  //   main {
+  //     height: 100%;
+  //   }
+  // }
+  .view {
+    // padding-top: map-get($hh, 'mob');
+    .section {
+      padding: 40px 0;
+    }
+    &--homepage {
+      .section {
+        &:nth-of-type(1) {}
+        &:nth-of-type(2) {}
+      }
+    }
+  }
+}
+@media (min-width: $s-sm) {}
+@media (min-width: $s-md) {}
+@media (min-width: $s-lg) {}
+@media (min-width: $s-xl) {
+  .view {
+    // padding-top: map-get($hh, 'desk');
+  }
+}
+@media (min-width: $s-xxl) {}

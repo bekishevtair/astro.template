@@ -1,0 +1,74 @@
+---
+import { t } from "i18next";
+import { localizePath, localizeUrl } from "astro-i18next";
+
+const { 
+  btnHref = t('btns.registration.link'),
+  btnTitle = t('btns.registration.title'),
+  btnColor = 'primary', 
+  btnSize = 4, 
+  btnWidth = 200
+} = Astro.props;
+---
+<a 
+  href={btnHref} 
+  target="_blank"  
+  class={`btn btn-w-${btnWidth} btn-${btnColor} btn-s${btnSize}`}>
+  <span>
+    { btnTitle }
+  </span>
+</a>
+
+<style lang="scss" is:global>
+  @import '../../styles/settings/vars';
+  @import '../../styles/settings/mixins/btn';
+  @media (min-width: $s-xs) {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    margin: 2px 4px 2px 2px;
+    border: 0 solid rgba(0,0,0,0);
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all .1s ease-in-out;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    &-primary {
+      color: $w;
+      background: map-get($dc, 'primary' );
+      &:hover {
+        background: lighten(map-get($dc, 'primary' ), 10%);
+      }
+    }
+    &-blue {
+      color: $w;
+      background: map-get($bc, 'blue' );
+      &:hover {
+        background: lighten(map-get($bc, 'blue' ), 10%);
+      }
+    }
+    &-light {
+      color: $b;
+      background: map-get($bc, 'white' );
+      &:hover {
+        background: map-get($bc, 'light');
+      }
+    }
+  }
+}
+$btn-scales-options: (
+  s1: (ts: 12px, pd: 10px), // ts - text size; pd - padding
+  s2: (ts: 14px, pd: 12px),
+  s3: (ts: 16px, pd: 14px),
+  s4: (ts: 18px, pd: 16px)
+);
+@include BTNSCALE($btn-scales-options);
+@include BTNWIDTH(80, 320);
+</style>

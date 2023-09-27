@@ -8,6 +8,7 @@ import Image from "../components/Image.astro";
 import Button from "../components/btns/Button.astro";
 
 changeLanguage("en");
+const cc = "pages.contact";
 
 const styles = {
     h: "tit ts-48 ts-lg-60 tc-blue tw-800 mb-4",
@@ -19,10 +20,10 @@ const styles = {
   <Section sectionName='1'>
     <Column>
         <h1  class={styles.h}>
-          {t('contact.sec1.title')}
+          {t(`${cc}.sec1.title`)}
         </h1>
         <p class={styles.p}>
-          {t('contact.sec1.text')}
+          {t(`${cc}.sec1.text`)}
         </p>
         <Button 
           btnHref={localizeUrl('btns.registration.link')}               

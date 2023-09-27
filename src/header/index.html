@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="style.css" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-grid.min.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__row">
+          <a
+            href="#"
+            class="header__logo">
+            Logo
+          </a>
+          <div class="menuToggle"></div>
+          <nav class="nav">
+            <ul class="nav__routes">
+              <div class="nav__col">
+                <li class="nav__routes--item">
+                  <a
+                    class="nav__routes--link"
+                    href="#">
+                    About
+                  </a>
+                </li>
+                <li class="nav__routes--item">
+                  <div class="nav__exp">Dropdown+</div>
+                  <ul class="nav__exp--body">
+                    <li class="nav__exp--item">
+                      <a
+                        class="nav__exp--link"
+                        href="#">
+                        Product 1
+                      </a>
+                    </li>
+                    <li class="nav__exp--item">
+                      <div class="nav__exp">Product 2+</div>
+                      <ul class="nav__exp--subbody">
+                        <li class="nav__exp--item">
+                          <a
+                            class="nav__exp--link"
+                            href="#">
+                            Submenu 1
+                          </a>
+                        </li>
+                        <li class="nav__exp--item">
+                          <a
+                            class="nav__exp--link"
+                            href="#">
+                            Submenu 2
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__routes--item">
+                  <a
+                    class="nav__routes--link"
+                    href="#">
+                    Portfolio
+                  </a>
+                </li>
+                <li class="nav__routes--item">
+                  <div class="nav__exp">Blog+</div>
+                  <ul class="nav__exp--body">
+                    <li class="nav__exp--item">
+                      <a
+                        class="nav__exp--link"
+                        href="#">
+                        Post 1
+                      </a>
+                    </li>
+                    <li class="nav__exp--item">
+                      <a
+                        class="nav__exp--link"
+                        href="#">
+                        Post 2
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </div>
+              <div class="nav__col">
+                <li class="nav__routes--item">
+                  <a
+                    class="nav__routes--link"
+                    href="">
+                    Log In
+                  </a>
+                </li>
+                <li class="nav__routes--item">
+                  <a
+                    class="nav__routes--link"
+                    href="">
+                    Sign up
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <script>
+      const menuToggle = document.querySelector(".menuToggle")
+      const header = document.querySelector("header")
+      const navExp = document.querySelectorAll(".nav__exp")
+      navExp.forEach((el) => {
+        el.onclick = function () {
+          el.classList.toggle("active")
+        }
+      })
+      menuToggle.onclick = function () {
+        header.classList.toggle("active")
+      }
+    </script>
+  </body>
+</html>

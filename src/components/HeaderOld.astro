@@ -1,0 +1,61 @@
+---
+import i18next, { t } from "i18next"
+import { localizePath, localizeUrl } from "astro-i18next"
+import { LanguageSelector } from "astro-i18next/components"
+import Button from "./btns/Button.astro"
+import Routes from "./header-old/Routes.astro"
+const cc = t("header.routes", { returnObjects: true })
+---
+
+<header class="header">
+  <div class="container">
+    <div class="header__row">
+      <div class="header__col">
+        <a
+          class="header__logo"
+          href={localizePath("/")}>
+          <img
+            src="/img/logo/logo.png"
+            alt="logo"
+          />
+        </a>
+      </div>
+      <div class="header__col">
+        <div class="header__routes">
+          <Routes routes={cc} />
+        </div>
+      </div>
+      <div class="header__col">
+        <div class="header__routes">
+          <LanguageSelector />
+          <div class="header__routes-item">
+            <Button
+              btnHref={t("btns.login.link")}
+              btnTitle={t("btns.login.title")}
+              btnWidth={"120"}
+              btnColor={"light"}
+            />
+          </div>
+          <div class="header__routes-item">
+            <Button btnWidth={"120"} />
+          </div>
+        </div>
+      </div>
+      <div class="header__col">
+        <div class="header__control">
+          <div class="toggle-nav">
+            <label
+              class="toggle-nav__wrapper js-toggle-nav"
+              for="toggle-nav">
+              <span class="toggle-nav__area">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

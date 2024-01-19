@@ -1,11 +1,11 @@
 ---
 export interface Props {
-	title?: string;
+  title?: string
 }
-import i18next, { t } from "i18next";
-import { HeadHrefLangs  } from "astro-i18next/components";
-import Footer from "../components/Footer.astro"; 
-import Header from "../components/Header.astro"; 
+import i18next, { t } from "i18next"
+import { HeadHrefLangs } from "astro-i18next/components"
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
 import "../styles/styles.scss"
 import "../styles/bootstrap-grid.min.css"
 ---
@@ -14,30 +14,38 @@ import "../styles/bootstrap-grid.min.css"
 <html lang={i18next.language}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
     <title>{t("site.title")}</title>
-    <meta name="description" content={t("site.description")} />
-	  <link rel="stylesheet" href="">
+    <meta
+      name="description"
+      content={t("site.description")}
+    />
+    <link
+      rel="stylesheet"
+      href=""
+    />
     <HeadHrefLangs />
   </head>
   <body>
     <Header />
     <main class="view">
-      <slot/>
+      <slot />
     </main>
-    <Footer></Footer>
-  </body>
+    <Footer />
+  </body><script>
+    const links = document.querySelectorAll("a")
+    const currentLang = document.documentElement.lang
+    links.forEach((link) => {
+      let href = link.getAttribute("href")
+      if (currentLang === "en" && href.startsWith("/en/")) {
+        href = href.replace("/en/", "/")
+      } else if (href.startsWith(`${currentLang}/`)) {
+        href = href.replace(`${currentLang}/`, "")
+      }
+      link.setAttribute("href", href)
+    })
+  </script>
 </html>
-<script>
-  const links = document.querySelectorAll('a');
-  const currentLang = document.documentElement.lang;
-  links.forEach(link => {
-    let href = link.getAttribute('href');
-    if (currentLang === 'en' && href.startsWith('/en/')) {
-      href = href.replace('/en/', '/');
-    } else if (href.startsWith(`${currentLang}/`)) {
-      href = href.replace(`${currentLang}/`, '');
-    }
-    link.setAttribute('href', href);
-  });
-</script>

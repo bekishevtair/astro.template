@@ -2,12 +2,128 @@
 import i18next, { t } from "i18next"
 import { localizePath, localizeUrl } from "astro-i18next"
 import { LanguageSelector } from "astro-i18next/components"
-import Button from "../components/btns/Button.astro"
-import Routes from "../components/header/Routes.astro"
+import Button from "./btns/Button.astro"
+import Routes from "./header-old/Routes.astro"
 const cc = t("header.routes", { returnObjects: true })
 ---
 
 <header class="header">
+  <div class="container">
+    <div class="header__row">
+      <a
+        href="#"
+        class="header__logo">
+        Logo
+      </a>
+      <div class="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="nav">
+        <ul class="nav__routes">
+          <div class="nav__col">
+            <li class="nav__routes--item">
+              <a
+                class="nav__routes--link"
+                href="#">
+                About
+              </a>
+            </li>
+            <li class="nav__routes--item">
+              <div class="nav__exp">Dropdown+</div>
+              <ul class="nav__exp--body">
+                <li class="nav__exp--item">
+                  <a
+                    class="nav__exp--link"
+                    href="#">
+                    Product 1
+                  </a>
+                </li>
+                <li class="nav__exp--item">
+                  <div class="nav__exp">Product 2+</div>
+                  <ul class="nav__exp--subbody">
+                    <li class="nav__exp--item">
+                      <a
+                        class="nav__exp--link"
+                        href="#">
+                        Submenu 1
+                      </a>
+                    </li>
+                    <li class="nav__exp--item">
+                      <a
+                        class="nav__exp--link"
+                        href="#">
+                        Submenu 2
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__routes--item">
+              <a
+                class="nav__routes--link"
+                href="#">
+                Portfolio
+              </a>
+            </li>
+            <li class="nav__routes--item">
+              <div class="nav__exp">Blog+</div>
+              <ul class="nav__exp--body">
+                <li class="nav__exp--item">
+                  <a
+                    class="nav__exp--link"
+                    href="#">
+                    Post 1
+                  </a>
+                </li>
+                <li class="nav__exp--item">
+                  <a
+                    class="nav__exp--link"
+                    href="#">
+                    Post 2
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </div>
+          <div class="nav__col">
+            <li class="nav__routes--item">
+              <a
+                class="nav__routes--link"
+                href="">
+                Log In
+              </a>
+            </li>
+            <li class="nav__routes--item">
+              <a
+                class="nav__routes--link"
+                href="">
+                Sign up
+              </a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<script>
+  const menuToggle = document.querySelector(".menuToggle")
+  const header = document.querySelector("header")
+  const navExp = document.querySelectorAll(".nav__exp")
+  navExp.forEach((el) => {
+    el.addEventListener("click", () => {
+      el.classList.toggle("active")
+    })
+  })
+  menuToggle.addEventListener("click", () => {
+    header.classList.toggle("active")
+  })
+</script>
+
+<!-- <header class="header">
   <div class="container">
     <div class="header__row">
       <div class="header__col">
@@ -58,4 +174,4 @@ const cc = t("header.routes", { returnObjects: true })
       </div>
     </div>
   </div>
-</header>
+</header> -->

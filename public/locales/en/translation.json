@@ -7,6 +7,11 @@
   "header": {
     "routes": [
       {
+        "link": "/faq",
+        "type": "link",
+        "title": "FAQ"
+      },
+      {
         "link": "/company",
         "type": "expandable",
         "title": "Company",
@@ -65,7 +70,7 @@
       "link": "https://client.brand/client.add"
     }
   },
-  "pages" : {
+  "pages": {
     "home": {
       "sec1": {
         "title": "Main Title",
@@ -80,33 +85,33 @@
       "sec1": {
         "title": "About Us",
         "subtitle": "Content of Forex",
-        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
       }
     },
     "contact": {
       "sec1": {
         "title": "Contact",
         "subtitle": "Content of Forex",
-        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
       },
       "sec2": {
         "title": "Contact",
         "subtitle": "Content of Forex",
-        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
       }
     },
     "forex": {
       "sec1": {
         "title": "Forex",
         "subtitle": "Content of Forex",
-        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
       }
     },
     "crypto": {
       "sec1": {
         "title": "Crypto",
         "subtitle": "Content of Crypto",
-        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
       }
     }
   }

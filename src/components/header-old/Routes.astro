@@ -4,14 +4,12 @@ const { routes } = Astro.props
 ---
 
 {
-  routes.map((route) => (
-    <div class="header__routes-item">
-      <div class="header__exp">
-        <p class="header__exp-head">
-          <span>{route.title}</span>
-        </p>
+  routes?.map((route) => (
+    <li class="nav__routes--item">
+      <div class="nav__exp">{route.title}</div>
+      <ul class="nav__exp--body">
         <Items items={route.child} />
-      </div>
-    </div>
+      </ul>
+    </li>
   ))
 }

@@ -1,13 +1,16 @@
 ---
-import { localizePath, localizeUrl  } from "astro-i18next";
+import { localizePath, localizeUrl } from "astro-i18next"
 const { items } = Astro.props
 ---
-{items.map(item => 
-  <li class="nav__exp--item">
-    <a
-      class="nav__exp--link"
-      href={localizePath(item.link)}>
-      {item.title}
-    </a>
-  </li>
-)}
+
+{
+  items.map((item) => (
+    <div class="nav__exp--item">
+      <a
+        class="nav__exp--link"
+        href={localizePath(item.link)}>
+        {item.title}
+      </a>
+    </div>
+  ))
+}

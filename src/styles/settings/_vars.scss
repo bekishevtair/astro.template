@@ -1,5 +1,5 @@
 // Media sizes
-$res: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl';
+$res: "xs", "sm", "md", "lg", "xl", "xxl";
 
 $gbp: (
   xs: 0,
@@ -18,35 +18,35 @@ $s-xl: map-get($gbp, xl);
 $s-xxl: map-get($gbp, xxl);
 
 // Project paths
-$img: '../../../../public/img';
+$img: "../../../../public/img";
 
 // Black / White / Transparent
 $b: #000000 !default;
-$w: #FFFFFF !default;
-$t: rgba(255,255,255,0);
+$w: #ffffff !default;
+$t: rgba(255, 255, 255, 0);
 
 // Default colors
-$dc: (
-  'primary':   #1170ff,
-  'error':   #d9181c,
-  'warning': #F0AD4E,
-  'success': #22BB33,
-  'hint':    #AAAAAA,
-);
+$dc: ();
 
 // Brand colors
 $bc: (
-  'white': #ffffff,
-  'light': #d9d9d9,
-  'gray': #8a8a8a,
-  'black': #363636,
-  'red':   #ef4209,
-  'green': #07f070,
-  'blue':  #1170ff 
+  "primary": #8285bc,
+  "secondary": #393a4d,
+  "error": #d9181c,
+  "warning": #f0ad4e,
+  "success": #22bb33,
+  "hint": #aaaaaa,
+  "white": #ffffff,
+  "light": #d9d9d9,
+  "gray": #8a8a8a,
+  "black": #363636,
+  "red": #ef4209,
+  "green": #07f070,
+  "blue": #1170ff
 );
 
 // Font options
-$fonts: 'Inter', 'Poppins';
+$fonts: "Inter", "Poppins";
 $font-weight: (
   min: (
     Inter: 1,
@@ -57,11 +57,20 @@ $font-weight: (
     Poppins: 9
   )
 );
-$font-size: (min: 10, max: 60);
-$text-colors: 'white', 'black', 'red', 'green', 'blue', 'gray';
+$font-size: (
+  min: 10,
+  max: 60
+);
+$text-colors: "white", "black", "red", "green", "primary", "gray";
 
 // Button options
-$btn-width: (min: 80, max: 320);
+$btn-width: (
+  min: 80,
+  max: 320
+);
 
 // Header options
-$hh: (mob: 80px, desk: 80px);
+$hh: (
+  mob: 80px,
+  desk: 80px
+);

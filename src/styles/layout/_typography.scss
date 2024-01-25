@@ -2,8 +2,26 @@
 @include TEXTPROPS();
 
 @media (min-width: $s-xs) {
-  p, a, b, i, li, ol, ul, h1, h2, h3, h4, h5, h6, span, label, input, textarea, button {
-    font-family: 'Poppins', sans-serif !important; // use as default font
+  p,
+  a,
+  b,
+  i,
+  li,
+  ol,
+  ul,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  label,
+  input,
+  textarea,
+  button,
+  div {
+    font-family: "Poppins", sans-serif !important; // use as default font
   }
   .tit {
     line-height: 1.2em;
@@ -12,8 +30,13 @@
     line-height: 1.4em;
   }
 }
-@media (min-width: $s-sm) {}
-@media (min-width: $s-md) {}
-@media (min-width: $s-lg) {}
-@media (min-width: $s-xl) {}
-@media (min-width: $s-xxl) {}
+@media (min-width: $s-sm) {
+}
+@media (min-width: $s-md) {
+}
+@media (min-width: $s-lg) {
+}
+@media (min-width: $s-xl) {
+}
+@media (min-width: $s-xxl) {
+}

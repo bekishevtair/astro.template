@@ -1,6 +1,7 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
 import { localizePath, localizeUrl } from "astro-i18next";
+import { cc } from "../../layouts/Layout.astro";
 import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import Column from "../../components/Column.astro";
@@ -10,44 +11,54 @@ import Button from "../../components/btns/Button.astro";
 
 changeLanguage("es");
 
-const cc = "pages.home";
+const home = cc("home");
+const sec1 = home.sec1;
+const sec2 = home.sec2;
 const styles = {
-    h: "tit ts-48 ts-lg-60 tc-blue tw-800 mb-4",
+    h: "tit ts-48 ts-lg-60 tc-primary tw-800 mb-5",
     p: "txt ts-16 ts-lg-18 tc-gray tw-400 mb-4"
 };
 ---
 
 <Layout>
-  <Section sectionName='1'>
-    <Column>
-      <h1  class={styles.h}>
-        {t(`${cc}.sec1.title`)}
+  <Section
+    class:list="section-hero"
+    sectionName="1">
+    <Column class:list="etgsf">
+      <h1>
+        {t("site.lang")}
+      </h1>
+      <h1 class:list={[`${styles.h}`]}>
+        {sec1.title}
       </h1>
       <p class={styles.p}>
-        {t(`${cc}.sec1.text`)}
+        {sec1.text}
       </p>
-      <Button 
-        btnTitle={t('btns.registration.title')} 
-      />
+      <Button btnTitle={t("btns.registration.title")} />
     </Column>
     <Column>
       <Image />
     </Column>
   </Section>
-  <Section sectionName='2'>
-    <Column colsLg='12' justify='center' align='center'>
+  <Section sectionName="2">
+    <Column
+      colsLg="12"
+      justify="center"
+      align="center">
       <h2 class={styles.h}>
-        {t(`${cc}.sec2.title`)}
+        {sec2.title}
       </h2>
-      <p class={`${styles.p} ta-center`}>
-        {t(`${cc}.sec2.text`)}
-      </p>
+      <p class={`${styles.p} ta-center`}></p>
       <Button />
     </Column>
   </Section>
-<Section sectionName='3'>
-    <Column colsLg='12' justify='center' align='center'>
+  <Section sectionName="3">
+    <Column
+      colsLg="12"
+      justify="center"
+      align="center">
       <Form />
     </Column>
   </Section>
 </Layout>
+<style></style>

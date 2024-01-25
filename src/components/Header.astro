@@ -11,9 +11,9 @@ const cc = t("header.routes", { returnObjects: true })
   <div class="container">
     <div class="header__row">
       <a
-        href="#"
+        href={localizePath("/")}
         class="header__logo">
-        Logo
+        {t("site.lang")}
       </a>
       <div class="menuToggle">
         <span></span>
@@ -21,35 +21,20 @@ const cc = t("header.routes", { returnObjects: true })
         <span></span>
       </div>
       <nav class="nav">
-        <ul class="nav__routes">
+        <div class="nav__routes">
           <div class="nav__col">
-            <li class="nav__routes--item">
-              <a
-                class="nav__routes--link"
-                href="#">
-                About
-              </a>
-            </li>
             <Routes routes={cc} />
-        
+            <LanguageSelector />
           </div>
           <div class="nav__col">
-            <li class="nav__routes--item">
-              <a
-                class="nav__routes--link"
-                href="">
-                Log In
-              </a>
-            </li>
-            <li class="nav__routes--item">
-              <a
-                class="nav__routes--link"
-                href="">
-                Sign up
-              </a>
-            </li>
+            <div class="nav__routes--item">
+              <Button btnTitle={t("btns.login.title")} />
+            </div>
+            <div class="nav__routes--item">
+              <Button btnTitle={t("btns.registration.title")} />
+            </div>
           </div>
-        </ul>
+        </div>
       </nav>
     </div>
   </div>
@@ -67,207 +52,212 @@ const cc = t("header.routes", { returnObjects: true })
     header.classList.toggle("active")
   })
 </script>
-<style lang="scss">
+<style lang="scss" is:global>
   @import "../styles/settings/vars";
   @media (min-width: 0px) {
-  .header {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    min-height: 66px;
-    padding: 0 !important;
-    background: red;
-    &__row {
-      padding: 0 !important;
-      width: 100%;
-      height: 100%;
+    .header {
+      padding: 10px 20px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    &__logo {
-      color: #fff;
-      font-size: 1.75em;
-      font-weight: 800;
-      text-decoration: none;
-    }
-  }
-  .nav {
-    position: absolute;
-    width: 100%;
-    max-width: 300px;
-    top: 66px;
-    height: 100vh;
-    right: 0;
-    background: #445964;
-    opacity: 0;
-    visibility: hidden;
-    transition: all ease-in-out 0.3s;
-    &__routes {
-      display: block;
-      &--item {
-        position: relative;
-        top: 0;
-        list-style: none;
+      justify-content: center;
+      position: relative;
+      min-height: 66px;
+      padding: 0 !important;
+      background: lighten(map-get($bc, "primary"), 20%);
+      &__row {
+        padding: 0 !important;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &__logo {
+        color: #fff;
+        font-size: 1.75em;
+        font-weight: 800;
+        text-decoration: none;
       }
     }
-    &__col {
+    .nav {
+      position: absolute;
+      width: 100%;
+      max-width: 300px;
+      top: 66px;
+      height: 100vh;
+      right: 0;
+      background: #445964;
+      opacity: 0;
+      visibility: hidden;
+      transition: all ease-in-out 0.3s;
+      &__routes {
+        display: block;
+        &--item {
+          position: relative;
+          top: 0;
+          list-style: none;
+        }
+      }
+      &__col {
+        display: block;
+      }
+
+      &__exp,
+      &__routes--link,
+      &__exp--link {
+        height: 100%;
+        color: #fff;
+        padding: 20px 25px;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-content: center;
+      }
+      &__routes--item,
+      &__exp--item {
+        list-style: none;
+      }
+      &__routes--item:hover,
+      &__exp--item:hover {
+        cursor: pointer;
+      }
+      &__exp--item:hover {
+        cursor: pointer;
+        background: lighten(map-get($bc, "primary"), 0%);
+      }
+      &__exp--body {
+        background: lighten(map-get($bc, "primary"), 10%);
+      }
+      &__exp--subbody {
+        background: lighten(map-get($bc, "primary"), 30%);
+      }
+      &__exp--body,
+      &__exp--subbody {
+        border-radius: 20px;
+        position: absolute;
+        left: 0;
+        width: 200px;
+        display: none;
+        overflow: hidden;
+      }
+      &__exp--item {
+        position: relative;
+        width: 100%;
+      }
+      &__exp--subbody {
+        top: 0;
+        left: 100%;
+      }
+    }
+
+    .header.active .nav {
+      opacity: 1;
+      visibility: visible;
+    }
+    .header.active .menuToggle span:nth-of-type(1) {
+      margin: 9px 0 0 0;
+      transform: rotate(-45deg) translateY(3px) translateX(-3px);
+      transition-delay: 0s, 0.2s;
+    }
+    .header.active .menuToggle span:nth-of-type(2) {
+      background-color: transparent;
+      opacity: 0;
+      visibility: 0;
+      transform: scaleX(0);
+      transition-delay: 0.2s;
+    }
+    .header.active .menuToggle span:nth-of-type(3) {
+      margin: 0 0 9px 0;
+      transform: rotate(45deg) translateY(-3px) translateX(-3px);
+      transition-delay: 0s, 0.2s;
+    }
+    .menuToggle {
+      position: relative;
+      width: 40px;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .menuToggle span {
+      transition: all ease-in-out 0.2s;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      border-radius: 4px;
+      transition-property: margin, transform;
+      transition-duration: 0.2s;
+      transition-delay: 0.2s, 0s;
+    }
+    .menuToggle span:nth-of-type(1) {
+      top: 0;
+      position: absolute;
+      margin: 0;
+      transition-property: margin, transform;
+      transition-duration: 0.2s;
+      transition-delay: 0.2s, 0s;
+    }
+    .menuToggle span:nth-of-type(2) {
+      transition: all ease-in-out 0.2s;
+      position: relative;
+      transition-duration: 0.2s;
+      transition-delay: 0.1s;
+    }
+    .menuToggle span:nth-of-type(3) {
+      bottom: 0;
+      position: absolute;
+      margin: 0;
+      transition-property: margin, transform;
+      transition-duration: 0.2s;
+      transition-delay: 0.2s, 0s;
+    }
+  }
+  @media (max-width: 768px) {
+    .nav__exp.active ~ .nav__exp--body {
+      display: block;
+    }
+    .nav__exp--item .nav__exp.active ~ .nav__exp--subbody {
       display: block;
     }
 
-    &__exp,
-    &__routes--link,
-    &__exp--link {
-      height: 100%;
-      color: #fff;
-      padding: 20px 25px;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-content: center;
-    }
-    &__routes--item,
-    &__exp--item {
-      list-style: none;
-    }
-    &__routes--item:hover,
-    &__exp--item:hover {
-      background: #bb703a;
-      cursor: pointer;
-    }
-    &__exp--body {
-      background: #445964;
-    }
-    &__exp--subbody {
-      background: #243138;
-    }
-    &__exp--body,
-    &__exp--subbody {
-      position: absolute;
+    .nav__exp--body,
+    .nav__exp--subbody {
+      width: 100%;
+      position: relative;
       left: 0;
-      width: 200px;
+    }
+  }
+  @media (min-width: 768px) {
+    .header {
+      display: flex;
+    }
+    .nav {
+      width: 70%;
+      max-width: 70%;
+      height: 100%;
+      visibility: visible;
+      opacity: 1;
+      position: relative;
+      top: 0;
+      background: transparent;
+    }
+    .nav__routes {
+      justify-content: space-between;
+      width: 100%;
+      display: flex;
+      height: 100%;
+    }
+    .nav__col {
+      display: flex;
+    }
+    .nav__routes--item:hover > .nav__exp--body,
+    .nav__exp--item:hover > .nav__exp--subbody {
+      display: block;
+    }
+    .menuToggle {
       display: none;
     }
-    &__exp--item {
-      position: relative;
-      width: 100%;
-    }
-    &__exp--subbody {
-      top: 0;
-      left: 100%;
-    }
   }
-
-  .header.active .nav {
-    opacity: 1;
-    visibility: visible;
-  }
-  .header.active .menuToggle span:nth-of-type(1) {
-    margin: 9px 0 0 0;
-    transform: rotate(-45deg) translateY(3px) translateX(-3px);
-    transition-delay: 0s, 0.2s;
-  }
-  .header.active .menuToggle span:nth-of-type(2) {
-    background-color: transparent;
-    opacity: 0;
-    visibility: 0;
-    transform: scaleX(0);
-    transition-delay: 0.2s;
-  }
-  .header.active .menuToggle span:nth-of-type(3) {
-    margin: 0 0 9px 0;
-    transform: rotate(45deg) translateY(-3px) translateX(-3px);
-    transition-delay: 0s, 0.2s;
-  }
-  .menuToggle {
-    position: relative;
-    width: 40px;
-    height: 30px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .menuToggle span {
-    transition: all ease-in-out 0.2s;
-    width: 100%;
-    height: 3px;
-    background: #fff;
-    border-radius: 4px;
-    transition-property: margin, transform;
-    transition-duration: 0.2s;
-    transition-delay: 0.2s, 0s;
-  }
-  .menuToggle span:nth-of-type(1) {
-    top: 0;
-    position: absolute;
-    margin: 0;
-    transition-property: margin, transform;
-    transition-duration: 0.2s;
-    transition-delay: 0.2s, 0s;
-  }
-  .menuToggle span:nth-of-type(2) {
-    transition: all ease-in-out 0.2s;
-    position: relative;
-    transition-duration: 0.2s;
-    transition-delay: 0.1s;
-  }
-  .menuToggle span:nth-of-type(3) {
-    bottom: 0;
-    position: absolute;
-    margin: 0;
-    transition-property: margin, transform;
-    transition-duration: 0.2s;
-    transition-delay: 0.2s, 0s;
-  }
-}
-@media (max-width: 768px) {
-  .nav__exp.active ~ .nav__exp--body {
-    display: block;
-  }
-  .nav__exp--item .nav__exp.active ~ .nav__exp--subbody {
-    display: block;
-  }
-
-  .nav__exp--body,
-  .nav__exp--subbody {
-    width: 100%;
-    position: relative;
-    left: 0;
-  }
-}
-@media (min-width: 768px) {
-  .header {
-    display: flex;
-  }
-  .nav {
-    width: 70%;
-    max-width: 70%;
-    height: 100%;
-    visibility: visible;
-    opacity: 1;
-    position: relative;
-    top: 0;
-    background: transparent;
-  }
-  .nav__routes {
-    justify-content: space-between;
-    width: 100%;
-    display: flex;
-    height: 100%;
-  }
-  .nav__col {
-    display: flex;
-  }
-  .nav__routes--item:hover > .nav__exp--body,
-  .nav__exp--item:hover > .nav__exp--subbody {
-    display: block;
-  }
-  .menuToggle {
-    display: none;
-  }
-}
 </style>

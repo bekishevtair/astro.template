@@ -1,20 +1,20 @@
 ---
-import Items from "../header-old/Items.astro"
+import Items from "../header/Items.astro"
 const { routes } = Astro.props
 ---
 
 {
   routes.map((route) => (
-    <li class="nav__routes--item">
+    <div class="nav__routes--item">
       {
         route.child ? <div  class="nav__exp">{route.title}</div>
-                      <ul class="nav__exp--body">
+                      <div class="nav__exp--body">
                         <Items items={route.child} />
-                      </ul>
-                      :  
-                      <a class="nav__routes--link" href={route.link} >      {route.title}
+                      </div>
+                      :
+                      <a class="nav__routes--link" href={route.link}> {route.title}
                       </a>
       }
-    </li>
+    </div>
   ))
 }

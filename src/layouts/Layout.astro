@@ -7,10 +7,12 @@ import { HeadHrefLangs } from "astro-i18next/components"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import "../styles/styles.scss"
-import "../styles/bootstrap-grid.min.css"
+export const cc = (page) => {
+  return JSON.parse(JSON.stringify(t(`pages.${page}`, { returnObjects: true })))
+}
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={i18next.language}>
   <head>
     <meta charset="utf-8" />
@@ -24,8 +26,10 @@ import "../styles/bootstrap-grid.min.css"
       content={t("site.description")}
     />
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href=""
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
     />
     <HeadHrefLangs />
   </head>
@@ -35,17 +39,18 @@ import "../styles/bootstrap-grid.min.css"
       <slot />
     </main>
     <Footer />
-  </body><script>
-    const links = document.querySelectorAll("a")
-    const currentLang = document.documentElement.lang
-    links.forEach((link) => {
-      let href = link.getAttribute("href")
-      if (currentLang === "en" && href.startsWith("/en/")) {
-        href = href.replace("/en/", "/")
-      } else if (href.startsWith(`${currentLang}/`)) {
-        href = href.replace(`${currentLang}/`, "")
-      }
-      link.setAttribute("href", href)
-    })
-  </script>
+    <script>
+      const links = document.querySelectorAll("a")
+      const currentLang = document.documentElement.lang
+      links.forEach((link) => {
+        let href = link.getAttribute("href")
+        if (currentLang === "en" && href.startsWith("/en/")) {
+          href = href.replace("/en/", "/")
+        } else if (href.startsWith(`${currentLang}/`)) {
+          href = href.replace(`${currentLang}/`, "")
+        }
+        link.setAttribute("href", href)
+      })
+    </script>
+  </body>
 </html>

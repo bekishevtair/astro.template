@@ -1,13 +1,22 @@
 ---
-const { 
-  colsLg = '6', 
-  flex = 'column', 
-  justify = 'center', 
-  align = 'start' 
+const {
+  colsLg = "6",
+  flex = "column",
+  justify = "center",
+  align = "start",
+  isRed = true,
+  isBordered = true,
+  class: className
 } = Astro.props
 ---
-<div class={`col-12 col-lg-${colsLg}`}>
-  <div class={`wrapper d-flex flex-${flex} justify-content-${justify} align-items-${align} mb-4`}>
+
+<div class:list={[`col-12 col-lg-${colsLg}`, className]}>
+  <div
+    class:list={[
+      `wrapper d-flex flex-${flex} justify-content-${justify} align-items-${align}`,
+      className
+    ]}
+    }>
     <slot />
   </div>
 </div>

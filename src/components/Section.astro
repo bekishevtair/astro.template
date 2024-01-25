@@ -1,10 +1,33 @@
 ---
-const { sectionName = '1' } = Astro.props
+const { sectionName = "1", id = "hero", class: faq } = Astro.props
 ---
-<section class={`section section-${sectionName}`}>
+
+<section
+  class:list={[`section section-${sectionName}`, faq]}
+  id={`section-${id}`}>
   <div class="container">
-    <div class=row>
+    <div class="row">
       <slot />
     </div>
   </div>
 </section>
+<style lang="scss">
+  @import "../styles/settings/_vars.scss";
+  @media (min-width: $s-xs) {
+    .section {
+      padding: 80px 0;
+      &-hero {
+      }
+    }
+  }
+  @media (min-width: $s-sm) {
+  }
+  @media (min-width: $s-md) {
+  }
+  @media (min-width: $s-lg) {
+  }
+  @media (min-width: $s-xl) {
+  }
+  @media (min-width: $s-xxl) {
+  }
+</style>

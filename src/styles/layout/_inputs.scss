@@ -1,6 +1,6 @@
 @media (min-width: $s-xs) {
   .form {
-    background: map-get($bc, 'light' );
+    background: map-get($bc, "light");
     padding: 34px;
     border-radius: 20px;
     max-width: 500px;
@@ -9,21 +9,23 @@
     &__item {
       position: relative;
       &--field {
-        background: map-get($bc,'white' );
+        background: map-get($bc, "white");
         position: relative;
         display: block;
         width: 100%;
         height: 60px;
         padding: 14px 20px;
         border-radius: 10px;
-        border: 2px solid map-get($bc, 'white' );
+        border: 2px solid map-get($bc, "white");
         box-shadow: none;
         outline: none !important;
         font-size: 14px;
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
         z-index: 2;
 
-        &.error, &.warning, &.success {
+        &.error,
+        &.warning,
+        &.success {
           ~ .input__item--message {
             margin-top: 0;
             visibility: visible;
@@ -31,11 +33,12 @@
           }
         }
         &.error {
-          border: 2px solid map-get($dc, 'error');
+          border: 2px solid map-get($bc, "error");
 
           ~ .input__item--message {
             .input__item {
-              &--warning, &--hint {
+              &--warning,
+              &--hint {
                 display: none;
               }
               &--error {
@@ -45,11 +48,12 @@
           }
         }
         &.warning {
-          border: 2px solid map-get($dc, 'warning');
-          
+          border: 2px solid map-get($bc, "warning");
+
           ~ .input__item--message {
             .input__item {
-              &--error, &--hint {
+              &--error,
+              &--hint {
                 display: none;
               }
               &--warning {
@@ -59,11 +63,12 @@
           }
         }
         &.success {
-          border: 1px solid map-get($dc, 'success');
+          border: 1px solid map-get($bc, "success");
 
           ~ .input__item--message {
             .input__item {
-              &--error, &--warning {
+              &--error,
+              &--warning {
                 display: none;
               }
               &--hint {
@@ -74,12 +79,10 @@
         }
 
         &::placeholder {
-          transition: all ease-in-out .2s;
-          
+          transition: all ease-in-out 0.2s;
         }
         &:focus::placeholder {
           color: rgba($b, 0);
-          
         }
       }
       &--message {
@@ -90,20 +93,21 @@
         margin-left: 6px;
         visibility: hidden;
         opacity: 0;
-        transition: all .1s ease-in-out;
+        transition: all 0.1s ease-in-out;
         z-index: 1;
       }
-      &--error, &--warning {
+      &--error,
+      &--warning {
         display: none;
       }
       &--error {
-        color: map-get($dc, 'error')
+        color: map-get($bc, "error");
       }
       &--warning {
-        color: map-get($dc, 'warning')
+        color: map-get($bc, "warning");
       }
       &--hint {
-        color: map-get($dc, 'hint')
+        color: map-get($bc, "hint");
       }
       textarea {
         min-height: 220px;
@@ -116,7 +120,7 @@
           margin-right: 10px;
         }
         &::-webkit-scrollbar-thumb {
-          background: lighten(map-get($bc, 'gray' ), 20%);
+          background: lighten(map-get($bc, "gray"), 20%);
         }
       }
     }
@@ -136,17 +140,16 @@
       }
     }
     &--checkbox {
-      
       input {
         display: none;
 
         &:checked + .input__item--label::after {
-          background: map-get($bc, 'blue');
+          background: map-get($bc, "blue");
           opacity: 1;
         }
         &.error {
           ~ .input__item--label:before {
-            border: 2px solid map-get($dc, 'error');
+            border: 2px solid map-get($bc, "error");
           }
         }
       }
@@ -161,29 +164,28 @@
         position: relative;
         cursor: pointer;
         display: inline-flex;
-        transition: .2s;
+        transition: 0.2s;
         &::after,
         &::before {
-          content: '';
+          content: "";
         }
-        &::before{
+        &::before {
           display: block;
           height: 24px;
           flex: 0 0 24px;
           width: 24px;
-          background: map-get($bc, 'white' );
+          background: map-get($bc, "white");
           border-radius: 50%;
           margin: 0 16px 0 0;
-          border: 2px solid map-get($bc, 'white' );
-          
+          border: 2px solid map-get($bc, "white");
         }
-        &::after{
+        &::after {
           position: absolute;
           top: 0;
           left: 0;
           width: 24px;
           height: 24px;
-          border: 2px solid map-get($bc,'white' );
+          border: 2px solid map-get($bc, "white");
           border-radius: 50%;
           opacity: 0;
         }
@@ -191,8 +193,13 @@
     }
   }
 }
-@media (min-width: $s-sm) {}
-@media (min-width: $s-md) {}
-@media (min-width: $s-lg) {}
-@media (min-width: $s-xl) {}
-@media (min-width: $s-xxl) {}
+@media (min-width: $s-sm) {
+}
+@media (min-width: $s-md) {
+}
+@media (min-width: $s-lg) {
+}
+@media (min-width: $s-xl) {
+}
+@media (min-width: $s-xxl) {
+}

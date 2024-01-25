@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "astro template",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -15,5 +15,9 @@
     "bootstrap": "^5.2.3",
     "i18next": "^22.4.15",
     "sass": "^1.62.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0"
   }
 }

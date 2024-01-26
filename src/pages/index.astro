@@ -1,23 +1,22 @@
 ---
-import i18next, { t, changeLanguage } from "i18next";
-import { localizePath, localizeUrl } from "astro-i18next";
-import { cc } from "../layouts/Layout.astro";
-import Layout from "../layouts/Layout.astro";
-import Section from "../components/Section.astro";
-import Column from "../components/Column.astro";
-import Image from "../components/Image.astro";
-import Form from "../components/Form.astro";
-import Button from "../components/btns/Button.astro";
+import i18next, { t, changeLanguage } from "i18next"
+import { localizePath, localizeUrl } from "astro-i18next"
+import Layout, { cc } from "../layouts/Layout.astro"
+import Section from "../components/Section.astro"
+import Column from "../components/Column.astro"
+import Image from "../components/Image.astro"
+import Form from "../components/Form.astro"
+import Button from "../components/btns/Button.astro"
 
-changeLanguage("en");
+changeLanguage("en")
 
-const home = cc("home");
-const sec1 = home.sec1;
-const sec2 = home.sec2;
+const home = cc("home")
+const sec1 = home.sec1
+const sec2 = home.sec2
 const styles = {
-    h: "tit ts-48 ts-lg-60 tc-primary tw-800 mb-5",
-    p: "txt ts-16 ts-lg-18 tc-gray tw-400 mb-4"
-};
+  h: "tit ts-48 ts-lg-60 tc-primary tw-800 mb-5",
+  p: "txt ts-16 ts-lg-18 tc-gray tw-400 mb-4"
+}
 ---
 
 <Layout>
@@ -61,4 +60,3 @@ const styles = {
     </Column>
   </Section>
 </Layout>
-<style></style>

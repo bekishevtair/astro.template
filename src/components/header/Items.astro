@@ -9,7 +9,7 @@ const { items } = Astro.props
       <a
         class="nav__exp--link"
         href={localizePath(item.link)}>
-        {item.title}
+        <span>{item.title}</span>
       </a>
     </div>
   ))

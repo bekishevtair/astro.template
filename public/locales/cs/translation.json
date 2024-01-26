@@ -74,12 +74,12 @@
   "pages": {
     "home": {
       "sec1": {
-        "title": "ENMain Title",
-        "text": "ENLorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
+        "title": "Main Title",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
       },
       "sec2": {
-        "title": "ENSection - 2",
-        "text": "ENLorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
+        "title": "Section - 2",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quisquam quae culpa nam impedit ratione ut dolorum perspiciatis enim, veritatis, dolores architecto quos earum nesciunt, cum possimus molestias repudiandae maxime! Incidunt magni qui enim vel minima culpa dolores quasi cum!"
       }
     },
     "about": {

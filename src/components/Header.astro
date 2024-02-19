@@ -51,6 +51,7 @@ const cc = t("header.routes", { returnObjects: true })
   const menuToggle = document.querySelector(".menuToggle")
   const header = document.querySelector("header")
   const navExp = document.querySelectorAll(".nav__exp")
+  const body = document.querySelector("body")
   navExp.forEach((el) => {
     el.addEventListener("click", () => {
       el.classList.toggle("active")
@@ -58,11 +59,15 @@ const cc = t("header.routes", { returnObjects: true })
   })
   menuToggle.addEventListener("click", () => {
     header.classList.toggle("active")
+    body.classList.toggle("scroll-disable")
   })
 </script>
 <style lang="scss" is:global>
   @import "../styles/settings/vars";
   @media (min-width: $s-xs) {
+    body.scroll-disable {
+      overflow: hidden;
+    }
     .header {
       padding: 10px 20px;
       display: flex;
@@ -118,7 +123,7 @@ const cc = t("header.routes", { returnObjects: true })
       &__exp,
       &__routes--link,
       &__exp--link {
-        height: 100%;
+        // height: 100%;
         color: #fff;
         padding: 20px 25px;
         text-decoration: none;
